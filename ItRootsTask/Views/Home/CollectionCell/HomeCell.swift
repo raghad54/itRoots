@@ -20,8 +20,6 @@ class HomeCell: UICollectionViewCell {
         contentView.backgroundColor = UIColor.systemGray6
     }
 
-    
-    
     func configure(with item: StatusItem) {
         titleLabel.text = item.title
         valueLabel.text = item.value

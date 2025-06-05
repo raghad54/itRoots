@@ -8,6 +8,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
     @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -22,6 +23,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         setupTargets()
         localizeUI()
+        passwordTextField.isSecureTextEntry = true
     }
 
     private func setupTargets() {

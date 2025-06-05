@@ -29,8 +29,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                                         latitudinalMeters: 1000,
                                         longitudinalMeters: 1000)
         mapView.setRegion(region, animated: true)
-
-        // Add marker
         let annotation = MKPointAnnotation()
         annotation.coordinate = location.coordinate
         annotation.title = "You are here"

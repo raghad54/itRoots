@@ -7,8 +7,6 @@
 
 import UIKit
 
-// MARK: - LoginViewController
-
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,6 +23,13 @@ class LoginViewController: UIViewController {
     private let viewModel = LoginViewModel()
     let userDefaultsService = UserDefaultsService()
     
+    override func viewWillAppear(_ animated: Bool) {
+     if UIView.userInterfaceLayoutDirection(for: arrowImageView.semanticContentAttribute) == .rightToLeft {
+           arrowImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
+       } else {
+           arrowImageView.transform = .identity
+    }
+}
 
 
     override func viewDidLoad() {
@@ -32,7 +37,9 @@ class LoginViewController: UIViewController {
         setupUserTypePicker()
         setupLanguageToggle()
         localizeUI()
+        passwordTextField.isSecureTextEntry = true
     }
+    
 
     private func setupUserTypePicker() {
         userTypePicker.delegate = self
@@ -60,6 +67,7 @@ class LoginViewController: UIViewController {
         localizeUI()
     }
     
+    
     private func localizeUI() {
         let languageCode = LanguageManager.shared.currentLanguage
 
@@ -78,9 +86,6 @@ class LoginViewController: UIViewController {
         passwordTextField.textAlignment = alignment
         userTypeTextField.textAlignment = alignment
         
-        if LanguageManager.shared.currentLanguage == "ar" {
-            arrowImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-        } 
     }
 
     @IBAction func signInTapped(_ sender: UIButton) {
