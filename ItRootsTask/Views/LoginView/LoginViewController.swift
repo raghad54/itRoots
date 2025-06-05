@@ -21,6 +21,11 @@ class LoginViewController: UIViewController {
     private let userTypes = [UserType.admin.rawValue.localized(), UserType.user.rawValue.localized()]
     private let viewModel = LoginViewModel()
     let userDefaultsService = UserDefaultsService()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpArrow()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +42,15 @@ class LoginViewController: UIViewController {
         arrow.contentMode = .scaleAspectFit
         arrow.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
 
-        userTypeTextField.rightView = arrow
-        userTypeTextField.rightViewMode = .always
-        
+       
         if UIView.userInterfaceLayoutDirection(for: userTypeTextField.semanticContentAttribute) == .rightToLeft {
             arrow.transform = CGAffineTransform(scaleX: -1, y: 1)
            } else {
             arrow.transform = .identity
            }
+        userTypeTextField.rightView = arrow
+        userTypeTextField.rightViewMode = .always
+        
 
     }
     private func setupUserTypePicker() {

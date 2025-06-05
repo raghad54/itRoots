@@ -31,3 +31,5 @@
 "change_to_arabic" = "العربية";
 "logout" = "تسجيل الخروج";
 "RegisterTitleLabel"  = "";
+"User" = "مستخدم";
+"Admin" = "مدير";

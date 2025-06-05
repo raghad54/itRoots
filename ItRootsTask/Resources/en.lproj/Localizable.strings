@@ -32,3 +32,5 @@
 "change_to_english" = "English";
 "change_to_arabic" = "Arabic";
 "logout" = "Logout";
+"User" = "User";
+"Admin" = "Admin";
