@@ -1,0 +1,33 @@
+/* 
+  Localizable(Arabic).strings
+  ItRootsTask
+
+  Created by Raghad's Mac on 03/06/2025.
+  
+*/
+
+
+"Username" = "اسم المستخدم";
+"Password" = "كلمة المرور";
+"Sign In" = "تسجيل الدخول";
+"Register" = "تسجيل";
+"Full Name" = "الاسم الكامل";
+"Email" = "البريد الإلكتروني";
+"Phone" = "الهاتف";
+"Error" = "خطأ";
+"Please fill all fields" = "يرجى ملء جميع الحقول";
+"Invalid credentials" = "بيانات الاعتماد غير صالحة";
+"Registration failed" = "فشل التسجيل";
+"Invalid full name" = "الاسم الكامل غير صالح";
+"Username must be 4-20 characters" = "يجب أن يكون اسم المستخدم بين 4-20 حرفًا";
+"Password must be 6+ characters" = "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل";
+"Invalid email format" = "تنسيق البريد الإلكتروني غير صالح";
+"Invalid phone number" = "رقم الهاتف غير صالح";
+"TitleLabel" = "تسجيل الدخول";
+"Home" = "الرئيسه";
+"Map"  = "الخريطه";
+"Posts" = "القائمه";
+"change_to_english" = "الإنجليزية";
+"change_to_arabic" = "العربية";
+"logout" = "تسجيل الخروج";
+"RegisterTitleLabel"  = "";

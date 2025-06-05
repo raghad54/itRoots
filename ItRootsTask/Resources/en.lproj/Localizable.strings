@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  ItRootsTask
+
+  Created by Raghad's Mac on 03/06/2025.
+  
+*/
+
+"Username" = "Username";
+"Password" = "Password";
+"Sign In" = "Sign In";
+"Register" = "Register";
+"Full Name" = "Full Name";
+"Email" = "Email";
+"Phone" = "Phone";
+"Error" = "Error";
+"Please fill all fields" = "Please fill all fields";
+"Invalid credentials" = "Invalid credentials";
+"Registration failed" = "Registration failed";
+"Invalid full name" = "Invalid full name";
+"Username must be 4-20 characters" = "Username must be 4-20 characters";
+"Password must be 6+ characters" = "Password must be 6+ characters";
+"Invalid email format" = "Invalid email format";
+"Invalid phone number" = "Invalid phone number";
+"TitleLabel" = "SIGN IN";
+"Home" = "Home";
+"Map"  = "Map";
+"Posts" = "List";
+"Home" = "Home";
+"Map"  = "Map";
+"Posts" = "List";
+"change_to_english" = "English";
+"change_to_arabic" = "Arabic";
+"logout" = "Logout";
