@@ -14,9 +14,9 @@
             filePath = "ItRootsTask/Views/LoginView/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "registerTapped(_:)"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "signInTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -176,6 +176,36 @@
                   endingLineNumber = "36"
                   offsetFromSymbolStart = "656">
                </Location>
+               <Location
+                  uuid = "D72B5AFB-1449-4154-9303-89B5A1F186C3 - 6fad3f5948e32c0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItRootsTask.SettingsViewController.logoutTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "ItRootsTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/ItRootsTask/ItRootsTask/Views/Setting/SettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "D72B5AFB-1449-4154-9303-89B5A1F186C3 - 6fad3f5948e32c0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItRootsTask.SettingsViewController.logoutTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "ItRootsTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/ItRootsTask/ItRootsTask/Views/Setting/SettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "656">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -224,6 +254,21 @@
                   endingLineNumber = "35"
                   offsetFromSymbolStart = "181">
                </Location>
+               <Location
+                  uuid = "30C69FF1-1630-45BE-BD50-D9779608DD1A - 6fad3f5948e32c2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItRootsTask.SettingsViewController.logoutTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "ItRootsTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/ItRootsTask/ItRootsTask/Views/Setting/SettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "181">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -241,6 +286,54 @@
             endingLineNumber = "39"
             landmarkName = "updateLanguageButtonTitle()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D856CB3-43E4-4952-B94B-3A21097527ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItRootsTask/Views/LoginView/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "localizeUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0D856CB3-43E4-4952-B94B-3A21097527ED - 5c66d64a2908d945"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItRootsTask.LoginViewController.localizeUI() -&gt; ()"
+                  moduleName = "ItRootsTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/ItRootsTask/ItRootsTask/Views/LoginView/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "3515">
+               </Location>
+               <Location
+                  uuid = "0D856CB3-43E4-4952-B94B-3A21097527ED - 5c66d64a2908d945"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItRootsTask.LoginViewController.localizeUI() -&gt; ()"
+                  moduleName = "ItRootsTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Desktop/ItRootsTask/ItRootsTask/Views/LoginView/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "3527">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

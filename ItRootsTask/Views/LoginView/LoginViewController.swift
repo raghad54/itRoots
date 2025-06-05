@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var arrowImageView: UIImageView!
 
     private let userTypePicker = UIPickerView()
-    private let userTypes = [UserType.admin.rawValue.localized, UserType.user.rawValue.localized]
+    private let userTypes = [UserType.admin.rawValue.localized(), UserType.user.rawValue.localized()]
     private let viewModel = LoginViewModel()
     let userDefaultsService = UserDefaultsService()
     
@@ -78,17 +78,19 @@ class LoginViewController: UIViewController {
         passwordTextField.textAlignment = alignment
         userTypeTextField.textAlignment = alignment
         
-        if languageCode == "ar" {
-            arrowImageView.semanticContentAttribute = .forceRightToLeft
-        } else {
-            arrowImageView.semanticContentAttribute = .forceRightToLeft
-        }
+        if LanguageManager.shared.currentLanguage == "ar" {
+            arrowImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        } 
     }
 
     @IBAction func signInTapped(_ sender: UIButton) {
         viewModel.username = usernameTextField.text ?? ""
         viewModel.password = passwordTextField.text ?? ""
         viewModel.selectedUserType = UserType(rawValue: userTypeTextField.text ?? "") ?? .user
+        viewModel.username = usernameTextField.text ?? ""
+        viewModel.password = passwordTextField.text ?? ""
+        viewModel.selectedUserType = UserType(rawValue: userTypeTextField.text ?? "") ?? .user
+
         viewModel.login { success in
             if success {
                 let user = User(
@@ -99,19 +101,27 @@ class LoginViewController: UIViewController {
                     phone: self.viewModel.phone,
                     userType: self.viewModel.selectedUserType
                 )
+
                 self.userDefaultsService.saveUser(user)
-                let initialVC: UIViewController
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+
                 let storyboard = UIStoryboard(name: "MainTabBarController", bundle: nil)
-                initialVC = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                let initialVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
                 let navController = UINavigationController(rootViewController: initialVC)
-                self.view.window?.rootViewController = navController
-                
+
+                if let window = UIApplication.shared.windows.first {
+                    window.rootViewController = navController
+                    window.makeKeyAndVisible()
+                    UIView.transition(with: window, duration: 0.4, options: .transitionFlipFromRight, animations: nil)
+                }
+
             } else {
                 let alert = UIAlertController(title: "Error", message: "Login failed", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default))
                 self.present(alert, animated: true)
             }
         }
+
     }
 
     @IBAction func registerTapped(_ sender: UIButton) {
@@ -130,12 +140,12 @@ extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return userTypes[row]()
+        return userTypes[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        userTypeTextField.text = userTypes[row]()
-        viewModel.selectedUserType = UserType(rawValue: userTypes[row]()) ?? .user
+        userTypeTextField.text = userTypes[row]
+        viewModel.selectedUserType = UserType(rawValue: userTypes[row]) ?? .user
     }
 }
 

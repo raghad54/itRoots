@@ -70,19 +70,26 @@ class SignUpViewController: UIViewController {
                 phone: viewModel.phone,
                 userType: .user
             )
+
             UserDefaultsService().saveUser(newUser)
             UserDefaults.standard.set(viewModel.username, forKey: "loggedInUsername")
             UserDefaults.standard.set(viewModel.userType.rawValue, forKey: "loggedInUserType")
-            
-            let initialVC: UIViewController
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+
             let storyboard = UIStoryboard(name: "MainTabBarController", bundle: nil)
-            initialVC = storyboard.instantiateViewController(identifier: "MainTabBarController")
+            let initialVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
             let navController = UINavigationController(rootViewController: initialVC)
-            self.view.window?.rootViewController = navController
-            
+
+            if let window = UIApplication.shared.windows.first {
+                window.rootViewController = navController
+                window.makeKeyAndVisible()
+                UIView.transition(with: window, duration: 0.4, options: .transitionFlipFromRight, animations: nil)
+            }
+
         } else {
             showAlert("Please fill all fields correctly.")
         }
+
     }
 
 
