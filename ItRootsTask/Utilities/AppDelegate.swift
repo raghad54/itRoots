@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         AppLaunchManager.shared.configureInitialViewController(for: window)
+
         return true
     }
 }

@@ -16,21 +16,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var languageToggle: UIButton!
-    @IBOutlet weak var arrowImageView: UIImageView!
 
     private let userTypePicker = UIPickerView()
     private let userTypes = [UserType.admin.rawValue.localized(), UserType.user.rawValue.localized()]
     private let viewModel = LoginViewModel()
     let userDefaultsService = UserDefaultsService()
-    
-    override func viewWillAppear(_ animated: Bool) {
-     if UIView.userInterfaceLayoutDirection(for: arrowImageView.semanticContentAttribute) == .rightToLeft {
-           arrowImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
-       } else {
-           arrowImageView.transform = .identity
-    }
-}
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +28,25 @@ class LoginViewController: UIViewController {
         setupLanguageToggle()
         localizeUI()
         passwordTextField.isSecureTextEntry = true
+        setUpArrow()
     }
     
+    private func setUpArrow() {
+        let arrow = UIImageView(image: UIImage(systemName: "chevron.down"))
+        arrow.tintColor = .gray
+        arrow.contentMode = .scaleAspectFit
+        arrow.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
 
+        userTypeTextField.rightView = arrow
+        userTypeTextField.rightViewMode = .always
+        
+        if UIView.userInterfaceLayoutDirection(for: userTypeTextField.semanticContentAttribute) == .rightToLeft {
+            arrow.transform = CGAffineTransform(scaleX: -1, y: 1)
+           } else {
+            arrow.transform = .identity
+           }
+
+    }
     private func setupUserTypePicker() {
         userTypePicker.delegate = self
         userTypePicker.dataSource = self
@@ -65,6 +71,7 @@ class LoginViewController: UIViewController {
     @objc private func toggleLanguage() {
         LanguageManager.shared.applyLanguageToCurrentScreen()
         localizeUI()
+        
     }
     
     

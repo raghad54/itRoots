@@ -11,6 +11,7 @@ import UIKit
 class LanguageManager {
     static let shared = LanguageManager()
     private init() {}
+    
 
     var currentLanguage: String {
         get {
@@ -25,7 +26,7 @@ class LanguageManager {
     }
 
     func setSemanticDirection() {
-        let semantic: UISemanticContentAttribute = currentLanguage == "ar" ? .forceRightToLeft : .forceLeftToRight
+        let semantic: UISemanticContentAttribute = currentLanguage == "ar" ? .unspecified : .forceLeftToRight
         UIView.appearance().semanticContentAttribute = semantic
     }
 
